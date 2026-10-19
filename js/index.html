@@ -1,34 +1,63 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library – Accordion</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <link rel="stylesheet" href="./style.css">
-    <div class="accord"  >
-        
-  <h1>الاسئلة الشائعة </h1>
-  <span > كم تستغرق مدة التوصيل عادة ؟</span>
-  <button class="btn-answer" aria-expanded="false" aria-controls="answer-question">+</button>
-  <p class="answer-question" hidden>تستغرق من 3 الى 5 أيام </p>
-  <div class="accord">
-    <span > كم تستغرق مدة التوصيل عادة ؟</span>
-  <button class="btn-answer" aria-expanded="false" aria-controls="answer-question">+</button>
-  <p class="answer-question" hidden>تستغرق من 3 الى 5 أيام </p>
-</div>
- <div class="accord">
-    <span > كم تستغرق مدة التوصيل عادة ؟</span>
-  <button class="btn-answer" aria-expanded="false" aria-controls="answer-question">+</button>
-  <p class="answer-question" hidden>تستغرق من 3 الى 5 أيام </p>
-</div>
- <div class="accord">
-    <span > كم تستغرق مدة التوصيل عادة ؟</span>
-  <button class="btn-answer" aria-expanded="false" aria-controls="answer-question">+</button>
-  <p class="answer-question" hidden>تستغرق من 3 الى 5 أيام </p>
-</div>
+  <nav class="navbar">
+    <span class="nav-title">Accordion</span>
+  </nav>
+
+  <main class="page">
+    <h1>Accordion</h1>
+    <p class="subtitle">One or more questions, with animation, icons and different styles.</p>
+
+    <div class="layout">
+      <!-- Options panel -->
+      <fieldset class="options">
+        <legend>Options (props)</legend>
+
+        <label>Number of questions (to try)
+          <select id="count"><option>3</option><option>4</option><option selected>5</option><option>6</option></select>
+        </label>
+        <label>variant
+          <select id="variant"><option>default</option><option>bordered</option><option>filled</option></select>
+        </label>
+        <label>iconType
+          <select id="iconType"><option>chevron</option><option>plus-minus</option></select>
+        </label>
+        <label>iconPosition
+          <select id="iconPosition"><option>end</option><option>start</option></select>
+        </label>
+        <label>headingLevel
+          <select id="headingLevel"><option>2</option><option selected>3</option><option>4</option></select>
+        </label>
+
+        <label class="check"><input type="checkbox" id="multiple"> Open more than one (multiple)</label>
+        <label class="check"><input type="checkbox" id="collapsible" checked> Collapse all (collapsible)</label>
+        <label class="check"><input type="checkbox" id="animated" checked> Animated (animated)</label>
+      </fieldset>
+
+      <!-- Demo -->
+      <section class="demo">
+        <div class="search-row">
+          <input type="search" id="search" placeholder="Search questions..." aria-label="Search questions">
+          <span class="status" id="status"></span>
+        </div>
+
+        <div class="accord" id="accord"></div>
+
+        <pre class="code">&lt;Accordion
+  items={items}
+  onChange={setOpenIds}
+/&gt;</pre>
+      </section>
     </div>
-      <script src="./script.js" ></script>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
